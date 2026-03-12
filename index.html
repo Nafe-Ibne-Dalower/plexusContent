@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nafe Ibne Dalower ~ Plexus</title>
+  <link rel="icon" href="assets/img/plexus.png">
+
+  <!-- Fonts - preconnect first for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS - local -->
+  <link rel="stylesheet" href="assets/css/aos.css">
+
+  <!-- Bootstrap Icons - local -->
+  <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <!-- Meeting Request Modal -->
+  <div class="meeting-modal-overlay" id="meetingModal">
+    <div class="meeting-modal">
+
+      <!-- HEADER -->
+      <div class="meeting-modal-header" id="modalHeader">
+        <button class="meeting-modal-close" id="closeModal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <h3 class="meeting-modal-title">Request a Consultation</h3>
+        <p class="meeting-modal-sub">Fill out the short form below and I'll review your project and schedule a meeting
+          within 24 hours.</p>
+      </div>
+
+      <!-- FORM BODY -->
+      <div class="meeting-modal-body" id="modalBody">
+        <div class="meeting-modal-frame">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe6IBGquy1wQWKsO77w5-C5rfg6FX_zl5evrlnhBx6Xf9jbbw/viewform?embedded=true"
+            width="100%" height="850" frameborder="0">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+
+      <!-- SUCCESS MESSAGE -->
+      <div class="meeting-modal-success" id="modalSuccess">
+        <div class="success-icon">
+          <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <h3>Request Submitted!</h3>
+        <p>Thank you! Your meeting request is <strong>in progress</strong>. I'll get back to you within <strong>24
+            hours</strong>.</p>
+        <button id="successClose">Close</button>
+      </div>
+
+    </div>
+  </div>
+  <header class="header" id="header">
+    <a href="#" class="logo">
+      <img src="./assets/img/plexus.PNG" alt="Plexus">
+    </a>
+
+    <nav class="navbar">
+      <a href="#home" id="nava" class="active">Home</a>
+      <a href="#procedure" id="nava">Procedure</a>
+      <a href="#blogs" id="nava">Blogs</a>
+      <a href="#pricing" id="nava">Pricing</a>
+      <a href="#contact" id="nava">Contact</a>
+    </nav>
+
+    <a class="jnbtn" id="openModal" href="#">
+      <span>Request a Consultation</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav">
+      <a href="#home" id="nava">Home</a>
+      <a href="#procedure" id="nava">Procedure</a>
+      <a href="#blogs" id="nava">Blogs</a>
+      <a href="#pricing" id="nava">Pricing</a>
+      <a href="#contact" id="nava">Contact</a>
+      <a class="jnbtn" id="openModal" href="#">
+        <span>Request a Meeting</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section class="home" id="home">
+
+    <!-- Background blobs -->
+    <div class="home-blob home-blob--1"></div>
+    <div class="home-blob home-blob--2"></div>
+    <div class="home-blob home-blob--3"></div>
+
+    <div class="home-inner">
+
+      <!-- LEFT: Text -->
+      <div class="home-text">
+        <div class="home-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Medical Content Writer
+        </div>
+
+        <h1 class="home-heading">
+          <span class="home-heading--name">Nafe Ibne Dalower</span>
+          <span class="home-heading--craft">Crafting <span class="typed-wrap"><span
+                class="multiple-text1"></span></span></span>
+        </h1>
+
+        <p class="home-desc">
+          <span class="pen-name-tag">✒ Plexus</span>
+          I am a <strong>medical student</strong> and
+          <strong>content writer</strong>. I worked at
+          <a href="https://nditc.net/" target="_blank" class="home-link">NDITC</a> as a content writer and later served
+          as <strong>President</strong>,
+          leading projects like <a
+            href="https://nditc.net/details/61ca02bf8daf0e6c4ef079990a0232c3ed79d9d23739a7131ca100dc841d538b7a7198def108d9490751f50ddee87b830a5aa5755a6c1d9dbb1216fc317afad801b42b31ca07533ad92b6e5e644a75ed19bcb1c5f50cafc8f12c2af3aad4fbfead346044b3ce747a5a91752cd92c35c79de27aa2ed0ab896122059f93482eb8e9faa82e64e5937978324377427df6d129f1fbd94b0131f809bd5e1efff4594ef/project/1688666400"
+            target="_blank" class="home-link">Hashtech</a> and the
+          <a href="https://nditc.net/details/61ca02bf8daf0e6c4ef079990a0232c3ed79d9d23739a7131ca100dc841d538b7a7198def108d9490751f50ddee87b8353051bb9412f40e48093209fc25366b5d43c976ef2253f1d2e928a4638e3734b25b46e204daa409f39028ada019fb7a17f24529273c19a79aadd83d695d3565540dac2eae41c11e44e825934c0e35112ae1b776e1b7d50f5b02df88edf160e8d4325203c9e2883c033814d9dd1369fff/project/1684195200"
+            target="_blank" class="home-link">Official Newsletter</a>.
+          I managed content for the NDITC website and
+          <a href="https://www.facebook.com/nditc.official" target="_blank" class="home-link">Facebook page with 22K+
+            followers</a>.
+          <br><br>
+          <em class="home-quote">"Discover, Learn, Heal."</em>
+        </p>
+
+        <div class="home-stats">
+          <div class="home-stat">
+            <span class="stat-num">100+</span>
+            <span class="stat-label">Articles Written</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="home-stat">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+
+        <!-- Home Pills -->
+        <!-- <div class="home-pills">
+        <div class="pill"><i class="bi bi-cpu-fill"></i> Research</div>
+        <div class="pill"><i class="bi bi-journal-richtext"></i> Writing</div>
+        <div class="pill"><i class="bi bi-patch-check-fill"></i> Review</div>
+        <div class="pill"><i class="bi bi-bar-chart-fill"></i> Publishing</div>
+      </div> -->
+        <div class="home-actions">
+          <a href="#contact" class="home-cta-primary">Work With Me <i class="bi bi-arrow-right"></i></a>
+          <a href="#blogs" class="home-cta-secondary">Read My Blogs</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Image -->
+      <div class="home-visual">
+        <div class="home-img-wrap">
+          <div class="home-img-ring home-img-ring--outer"></div>
+          <div class="home-img-ring home-img-ring--inner"></div>
+          <img src="assets/img/heroimg1.png" alt="Nafe Ibne Dalower" class="home-img">
+          <div class="home-img-badge">
+            <i class="bi bi-shield-fill-check"></i>
+            <span>Verified Medical Writer</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- procedure -->
+  <section class="procedure" id="procedure">
+    <div class="section-title">
+      <h2>Procedure</h2>
+      <p>How I Work</p>
+    </div>
+
+    <div class="proc-timeline">
+
+      <div class="proc-step">
+        <div class="proc-card" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-bullseye"></i></div>
+          <div class="proc-body">
+            <h3>Goal & Audience Alignment</h3>
+            <p>Understand client objectives, target audience, and platform to ensure content is relevant and impactful.
+            </p>
+          </div>
+        </div>
+        <div class="proc-center">
+          <div class="proc-num">01</div>
+        </div>
+        <div class="proc-empty"></div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-empty"></div>
+        <div class="proc-center">
+          <div class="proc-num">02</div>
+        </div>
+        <div class="proc-card" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-journal-medical"></i></div>
+          <div class="proc-body">
+            <h3>Evidence-Based Research</h3>
+            <p>Use peer-reviewed studies, official guidelines, and trusted medical sources to ensure accuracy and
+              safety.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-card" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-pencil-square"></i></div>
+          <div class="proc-body">
+            <h3>Content Development</h3>
+            <p>Write clear, structured, and engaging content tailored to the audience — professionals or general public.
+            </p>
+          </div>
+        </div>
+        <div class="proc-center">
+          <div class="proc-num">03</div>
+        </div>
+        <div class="proc-empty"></div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-empty"></div>
+        <div class="proc-center">
+          <div class="proc-num">04</div>
+        </div>
+        <div class="proc-card" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <div class="proc-body">
+            <h3>Review & Editing</h3>
+            <p>Proofread and fact-check multiple times to ensure clarity, consistency, and compliance with medical
+              standards.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-card" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-chat-dots-fill"></i></div>
+          <div class="proc-body">
+            <h3>Client Feedback & Revision</h3>
+            <p>Share drafts with clients, incorporate their feedback, and refine content to meet their vision.</p>
+          </div>
+        </div>
+        <div class="proc-center">
+          <div class="proc-num">05</div>
+        </div>
+        <div class="proc-empty"></div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-empty"></div>
+        <div class="proc-center">
+          <div class="proc-num">06</div>
+        </div>
+        <div class="proc-card" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-shield-fill-check"></i></div>
+          <div class="proc-body">
+            <h3>Safe & Responsible Publishing</h3>
+            <p>Ensure all content is ethically sound, compliant, and safe for public consumption before publishing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-card" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
+          <div class="proc-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+          <div class="proc-body">
+            <h3>Performance Monitoring</h3>
+            <p>Track engagement, reader feedback, and analytics to improve future content and maximize impact.</p>
+          </div>
+        </div>
+        <div class="proc-center">
+          <div class="proc-num">07</div>
+        </div>
+        <div class="proc-empty"></div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Blogs -->
+  <!-- BLOGS SECTION -->
+  <section class="blogs" id="blogs">
+    <div class="section-title">
+      <h2>Blogs</h2>
+      <p>My Written Work</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="blog-banner" style="background: linear-gradient(135deg, #ede7ff, #c9b8f7);">
+          <span class="blog-tag" style="background:#5300e2;">Basic Article</span>
+          <span class="blog-emoji">🩺</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>📅 Feb 20, 2025</span>
+            <span>⏱ 4 min read</span>
+            <span>📝 900 words</span>
+          </div>
+          <h3>Understanding Hypertension: The Silent Killer</h3>
+          <p>A deep dive into the mechanisms, risk factors, and evidence-based management strategies for hypertension in
+            modern clinical practice.</p>
+          <a href="./article/hypertension.html" class="blog-btn">Read Article <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+        <div class="blog-banner" style="background: linear-gradient(135deg, #e0fff5, #a8f0d8);">
+          <span class="blog-tag" style="background:#00b894;">Standard Article</span>
+          <span class="blog-emoji">🧠</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>📅 Mar 3, 2025</span>
+            <span>⏱ 6 min read</span>
+            <span>📝 1,400 words</span>
+          </div>
+          <h3>The Gut-Brain Axis: How Your Diet Shapes Mental Health</h3>
+          <p>Exploring the fascinating connection between gut microbiome diversity and psychological wellbeing — what
+            the latest research tells us.</p>
+          <a href="#" class="blog-btn">Read Article <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+        <div class="blog-banner" style="background: linear-gradient(135deg, #ffe0f0, #f7b8d8);">
+          <span class="blog-tag" style="background:#e84393;">Premium Article
+          </span>
+          <span class="blog-emoji">💊</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>📅 Mar 18, 2025</span>
+            <span>⏱ 7 min read</span>
+            <span>📝 1,600 words</span>
+          </div>
+          <h3>Antibiotic Resistance: A Growing Global Crisis</h3>
+          <p>Why antimicrobial resistance is one of the biggest threats to global health — and what clinicians and
+            patients can do about it.</p>
+          <a href="#" class="blog-btn">Read Article <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing" id="pricing">
+    <div class="section-title">
+      <h2>Pricing</h2>
+      <p>Choose Your Plan</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="pricing-top">
+          <h3>Basic Article</h3>
+          <div class="pricing-words">800–1000 words</div>
+          <div class="pricing-price">$100</div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="bi bi-check-circle-fill"></i> Short blog or article</li>
+          <li><i class="bi bi-check-circle-fill"></i> Basic research</li>
+          <li><i class="bi bi-check-circle-fill"></i> SEO-friendly (optional)</li>
+        </ul>
+        <div class="pricing-footer">
+          <div class="pricing-detail"><i class="bi bi-arrow-repeat"></i> 1 Revision</div>
+          <div class="pricing-detail"><i class="bi bi-clock"></i> 4–5 Days</div>
+        </div>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+
+      <div class="pricing-card pricing-card--highlight" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+        <div class="pricing-badge">⭐ Popular</div>
+        <div class="pricing-top">
+          <h3>Standard Article</h3>
+          <div class="pricing-words">1200–1500 words</div>
+          <div class="pricing-price">$180</div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="bi bi-check-circle-fill"></i> In-depth blog or article</li>
+          <li><i class="bi bi-check-circle-fill"></i> Evidence-based content</li>
+          <li><i class="bi bi-check-circle-fill"></i> APA referencing included</li>
+          <li><i class="bi bi-check-circle-fill"></i> SEO optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i> Meta description & formatting</li>
+        </ul>
+        <div class="pricing-footer">
+          <div class="pricing-detail"><i class="bi bi-arrow-repeat"></i> 2 Revisions</div>
+          <div class="pricing-detail"><i class="bi bi-clock"></i> 3–4 Days</div>
+        </div>
+        <a href="#contact" class="pricing-btn pricing-btn--white">Get Started</a>
+      </div>
+
+      <div class="pricing-card pricing-card--highlight" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+        <div class="pricing-badge pricing-badge--fire">🔥 Most Popular</div>
+        <div class="pricing-top">
+          <h3>Standard Blog Pack</h3>
+          <div class="pricing-words">1200–1500 words × 4 articles</div>
+          <div class="pricing-price">$600</div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="bi bi-check-circle-fill"></i> 4 articles in one order</li>
+          <li><i class="bi bi-check-circle-fill"></i> Evidence-based content</li>
+          <li><i class="bi bi-check-circle-fill"></i> APA referencing for all</li>
+          <li><i class="bi bi-check-circle-fill"></i> SEO optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i> Meta descriptions & formatting</li>
+          <li><i class="bi bi-check-circle-fill"></i> Priority delivery</li>
+        </ul>
+        <div class="pricing-footer">
+          <div class="pricing-detail"><i class="bi bi-arrow-repeat"></i> 2 per article</div>
+          <div class="pricing-detail"><i class="bi bi-clock"></i> 3–4 Days/article</div>
+        </div>
+        <a href="#contact" class="pricing-btn pricing-btn--white">Get Started</a>
+      </div>
+
+      <div class="pricing-card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+        <div class="pricing-top">
+          <h3>Premium Article</h3>
+          <div class="pricing-words">1800–2200+ words</div>
+          <div class="pricing-price">$280–350</div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="bi bi-check-circle-fill"></i> Long-form authority content</li>
+          <li><i class="bi bi-check-circle-fill"></i> Deep medical research</li>
+          <li><i class="bi bi-check-circle-fill"></i> APA referencing included</li>
+          <li><i class="bi bi-check-circle-fill"></i> SEO optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i> Web/blog formatting</li>
+          <li><i class="bi bi-check-circle-fill"></i> Priority revisions & delivery</li>
+        </ul>
+        <div class="pricing-footer">
+          <div class="pricing-detail"><i class="bi bi-arrow-repeat"></i> 3 Revisions</div>
+          <div class="pricing-detail"><i class="bi bi-clock"></i> 2–3 Days</div>
+        </div>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+
+    </div>
+  </section>
+  <!--Blogs -->
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+
+      <div class="contact-left" data-aos="fade-right" data-aos-duration="800">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Let's Work Together</p>
+        </div>
+
+        <p class="contact-subtext">
+          Have a project in mind? Need medical content that's accurate, engaging, and SEO-ready?
+          I'd love to hear from you. Fill out the form or reach out directly.
+        </p>
+
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <a href="mailto:nafeprodhan@gmail.com" class="contact-info-value">nafeprodhan@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <span class="contact-info-label">Phone</span>
+              <a href="tel:+8801887433971" class="contact-info-value">+880 1887433971</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Bangladesh</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/nafeprodhan" class="contact-social-btn" title="Facebook"><i
+              class="bx bxl-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/nafe-ibne-dalower/" class="contact-social-btn" title="LinkedIn"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&to=nafeprodhan@gmail.com" target="_blank"
+            class="contact-social-btn" title="Gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="https://github.com/Nafe-Ibne-Dalower/" class="contact-social-btn" title="GitHub"><i
+              class="bi bi-github"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-right" data-aos="fade-left" data-aos-duration="800">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+
+          <!-- Web3Forms required -->
+          <input type="hidden" name="access_key" value="cd476e56-12ca-413b-b6dd-c46367461278">
+          <input type="hidden" name="subject" value="New Contact — Plexus ">
+          <input type="hidden" name="from_name" value="Plexus Contact Form">
+          <input type="checkbox" name="botcheck" style="display:none">
+          <input type="hidden" name="redirect" value="false">
+          <h3 class="contact-form-title">Send a Message</h3>
+
+          <div class="contact-form-row">
+            <div class="contact-field">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required autocomplete="off">
+            </div>
+            <div class="contact-field">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="john@email.com" required autocomplete="off">
+            </div>
+          </div>
+
+          <div class="contact-field">
+            <label>Subject</label>
+            <input type="text" name="subject_field" placeholder="Medical article request..." autocomplete="off">
+          </div>
+
+          <div class="contact-field">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit" id="submitBtn">
+            <span>Send Message</span>
+            <i class="bi bi-send-fill"></i>
+          </button>
+
+          <!-- Success / Error messages -->
+          <p class="form-success" id="formSuccess"
+            style="display:none; color:#00b894; font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; margin-top:12px;">
+            ✓ Message sent successfully! I'll get back to you within 24 hours.
+          </p>
+          <p class="form-error" id="formError"
+            style="display:none; color:#e74c3c; font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; margin-top:12px;">
+            ✗ Something went wrong. Please try again.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="./assets/img/plexus.PNG" alt="Plexus">
+          <span>Plexus</span>
+        </div>
+        <p class="footer-tagline">
+          Crafting evidence-based medical content for professionals and the public.
+          Accurate. Engaging. Impactful.
+        </p>
+        <em class="footer-quote">"Discover, Learn, Heal."</em>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#procedure">Procedure</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-services">
+        <h4>Services</h4>
+        <span>Medical Blog Writing</span>
+        <span>Health Articles</span>
+        <span>SEO Medical Content</span>
+        <span>Research Writing</span>
+        <span>APA Referencing</span>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <a href="https://mail.google.com/mail/?view=cm&to=nafeprodhan@gmail.com" target="_blank"><i
+            class="bi bi-envelope-fill"></i> nafeprodhan@gmail.com</a>
+        <a href="tel:+8801887433971"><i class="bi bi-telephone-fill"></i> +880 1887433971</a>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/nafeprodhan" title="Facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/nafe-ibne-dalower/" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&to=nafeprodhan@gmail.com" target="_blank">
+            <i class="bx bxl-gmail"></i>
+          </a>
+          <a href="https://github.com/Nafe-Ibne-Dalower/" title="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 <strong>Plexus</strong> — Nafe Ibne Dalower. All Rights Reserved.</span>
+      <span>Designed by <a href="#">Nafe Ibne Dalower</a></span>
+    </div>
+  </footer>
+
+  <!-- Local JS files - NO CDN -->
+  <script src="assets/js/typed.umd.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>
