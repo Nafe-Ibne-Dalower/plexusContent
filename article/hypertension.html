@@ -21,7 +21,22 @@
 </head>
 
 <body>
-
+<!-- LOADING OVERLAY -->
+  <div id="loadingOverlay">
+    <div class="loader-label">Loading <span id="loaderPlanName" class="basic-c">Basic</span> Version</div>
+    <div class="dna-loader basic" id="dnaLoader">
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+      <div class="dna-dot"></div>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill basic" id="loaderBarFill"></div>
+    </div>
+  </div>
   <!-- HEADER -->
   <header class="header" id="header">
     <a href="../index.html" class="logo">
@@ -35,7 +50,7 @@
       <a href="../index.html#contact" id="nava">Contact</a>
     </nav>
     <a class="jnbtn" href="../index.html#contact">
-      <span>Request a Meeting</span>
+      <span>Request a Consultation</span>
       <i class="bi bi-arrow-right"></i>
     </a>
     <div class="hamburger" id="hamburger">
@@ -49,11 +64,31 @@
       <a href="../index.html#blogs" id="nava">Blogs</a>
       <a href="../index.html#pricing" id="nava">Pricing</a>
       <a href="../index.html#contact" id="nava">Contact</a>
-      <a href="../index.html#contact" class="mobile-cta">Request a Meeting <i class="bi bi-arrow-right"></i></a>
+      <a href="../index.html#contact" class="mobile-cta">Request a Consultation <i class="bi bi-arrow-right"></i></a>
     </div>
   </header>
 
   <div class="article-page">
+    <!-- Mobile TOC -->
+    <button class="toc-mobile-btn" id="tocToggle">
+      <i class="bi bi-list"></i> Contents
+    </button>
+    <div class="toc-overlay" id="tocOverlay"></div>
+    <div class="toc-drawer" id="tocDrawer">
+      <div class="toc-drawer-handle"></div>
+      <h4>Table of Contents</h4>
+      <ul class="toc-list">
+        <li><a href="#understanding" onclick="closeToc()">Understanding BP</a></li>
+        <li><a href="#types" onclick="closeToc()">Types</a></li>
+        <li><a href="#risk-factors" onclick="closeToc()">Risk Factors</a></li>
+        <li><a href="#symptoms" onclick="closeToc()">Symptoms</a></li>
+        <li><a href="#complications" onclick="closeToc()">Complications</a></li>
+        <li><a href="#diagnosis" onclick="closeToc()">Diagnosis</a></li>
+        <li><a href="#treatment" onclick="closeToc()">Treatment</a></li>
+        <li><a href="#prevention" onclick="closeToc()">Prevention</a></li>
+        <li><a href="#conclusion" onclick="closeToc()">Conclusion</a></li>
+      </ul>
+    </div>
 
     <!-- HERO -->
     <div class="article-hero">
@@ -312,6 +347,7 @@
       </article>
 
       <!-- SIDEBAR -->
+<!-- SIDEBAR -->
       <aside class="article-sidebar">
         <div class="sidebar-card">
           <h4>Table of Contents</h4>
@@ -327,7 +363,11 @@
             <li><a href="#conclusion">Conclusion</a></li>
           </ul>
         </div>
-    </div>
+      </aside>
+
+    </div><!-- /.article-body-wrap -->
+
+    <!-- FOOTER CTA -->
 
     <!-- FOOTER CTA -->
     <div class="article-footer-cta">
@@ -385,18 +425,75 @@
   </footer>
 
   <script src="../assets/js/aos.js"></script>
-  <script>
-    AOS.init();
-    window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.toggle('sticky', window.scrollY > 10);
-    });
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-    });
-  </script>
+<script>
+  AOS.init();
+
+// ================================
+// STICKY HEADER
+// ================================
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('sticky', window.scrollY > 10);
+});
+
+// ================================
+// HAMBURGER
+// ================================
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+});
+
+// ================================
+// MOBILE TOC TOGGLE
+// ================================
+let tocOpen = false;
+const tocToggle  = document.getElementById('tocToggle');
+const tocDrawer  = document.getElementById('tocDrawer');
+const tocOverlay = document.getElementById('tocOverlay');
+
+tocToggle.addEventListener('click', () => {
+  tocOpen = !tocOpen;
+  if (tocOpen) {
+    tocDrawer.classList.add('open');
+    tocOverlay.classList.add('open');
+    tocToggle.innerHTML = '<i class="bi bi-x-lg"></i> Close';
+  } else {
+    closeToc();
+  }
+});
+
+tocOverlay.addEventListener('click', closeToc);
+
+function closeToc() {
+  tocOpen = false;
+  tocDrawer.classList.remove('open');
+  tocOverlay.classList.remove('open');
+  tocToggle.innerHTML = '<i class="bi bi-list"></i> Contents';
+}
+
+// ================================
+// ACTIVE TOC HIGHLIGHT ON SCROLL
+// ================================
+const tocLinks = document.querySelectorAll('.article-sidebar .toc-list a');
+const headings = [];
+tocLinks.forEach(a => {
+  const id = a.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if (el) headings.push({ el, a });
+});
+
+window.addEventListener('scroll', () => {
+  let current = headings[0];
+  headings.forEach(h => {
+    if (window.scrollY >= h.el.offsetTop - 110) current = h;
+  });
+  tocLinks.forEach(a => a.classList.remove('toc-active'));
+  if (current) current.a.classList.add('toc-active');
+}, { passive: true });
+
+</script>
 
 </body>
 </html>
