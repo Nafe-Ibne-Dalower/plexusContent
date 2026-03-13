@@ -18,11 +18,13 @@ body {
   overflow-x: hidden;
 }
 
-html, body {
-  overflow-x: hidden;
+html {
+  overflow-x: clip;   /* ← use clip instead of hidden — this does NOT break sticky */
+}
+body {
+  overflow-x: clip;
   max-width: 100%;
 }
-
 section {
   min-height: 100vh;
   padding: 10rem 5% 2rem;
