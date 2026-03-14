@@ -136,10 +136,9 @@ if (contactForm && submitBtn) {
 const modal    = document.getElementById('meetingModal');
 const closeBtn = document.getElementById('closeModal');
 const openBtns = [
-  document.getElementById('openModal'),
+  ...document.querySelectorAll('[id="openModal"]'),
   document.getElementById('openModalMobile')
 ];
- 
 if (modal && closeBtn) {
   let modalLoaded = false;
  
